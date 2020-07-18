@@ -10,11 +10,18 @@
     "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
   },
   "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/native": "^5.7.0",
+    "@react-navigation/stack": "^5.7.0",
     "expo": "~38.0.8",
     "expo-status-bar": "^1.0.2",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-reanimated": "~1.9.0",
+    "react-native-safe-area-context": "~3.0.7",
+    "react-native-screens": "~2.9.0",
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
@@ -30,18 +37,27 @@
     "projects": [
       {
         "preset": "jest-expo/ios",
+        "setupFiles": [
+          "./node_modules/react-native-gesture-handler/jestSetup.js"
+        ],
         "transformIgnorePatterns": [
           "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
         ]
       },
       {
         "preset": "jest-expo/android",
+        "setupFiles": [
+          "./node_modules/react-native-gesture-handler/jestSetup.js"
+        ],
         "transformIgnorePatterns": [
           "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
         ]
       },
       {
         "preset": "jest-expo/web",
+        "setupFiles": [
+          "./node_modules/react-native-gesture-handler/jestSetup.js"
+        ],
         "transformIgnorePatterns": [
           "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
         ]
